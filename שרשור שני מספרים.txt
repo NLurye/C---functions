@@ -1,0 +1,20 @@
+int toStart(int num, int start)
+{
+	int newNum;
+
+	fx1(); // do not change!!!
+	if (num == 0)
+	{
+		return start;
+	}
+		return = toStart(num / 10, start)* 10 + num % 10;
+
+}
+
+הפונקציה מקבלת מספר שלם חיובי num ומספר שלם חיובי start .הפונקציה מחזירה
+מספר חדש אשר הינו שרשור של המספר start עם המספר num( .יש להניח כי num ו-
+start גדולים מ-0.
+toStart(45, 123) => 12345
+toStart(21, 12) =>1221
+toStart(12345, 6) => 612345
+toStart(1,6) => 61

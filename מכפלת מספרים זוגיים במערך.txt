@@ -1,0 +1,17 @@
+int MultEven(int a[], int size)
+{
+	int s;
+	if (size == 0) return 0;
+	s = MultEven(a, size - 1);
+	if (a[size - 1] % 2 == 0 && s == 0) //even and only odd numbers were before that
+		s = 1;
+	if (a[size - 1] % 2 == 0)//even
+		return s *= a[size - 1];
+	return s;//odd
+}
+
+המקבלת מערך של מספרים שלמים )הגדולים שווים לאפס( ואת גודלו, ומחזירה את מכפלת
+המספרים הזוגיים במערך.
+למשל עבור המערך
+9|2|4|6|1|3
+2*4*6=48 
