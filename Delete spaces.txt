@@ -1,0 +1,27 @@
+char* removeBlanks(char* str)
+{
+	int i, j, size = strlen(str);
+	for (i = 0, j = 0; j <= size; j++) 
+	{
+		str[j - i] = str[j];
+		if (str[j] == ' ')
+			i++;
+	}
+
+	return str;
+}
+
+char* removeBlanks(char* str)
+{
+	int i, j = 0, size = strlen(str);
+	for (i = 1; i <= size; i++)
+	{
+		while (str[i] == ' ')
+		{
+			i++;
+		}
+		j++;
+		str[j] = str[i];
+	}
+	return str;
+}

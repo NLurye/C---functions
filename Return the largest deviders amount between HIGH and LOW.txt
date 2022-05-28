@@ -1,0 +1,26 @@
+#include <stdio.h>
+void main()
+{
+    int l, h, c, t, max = 0;
+    printf("Enter l\n");
+    scanf_s("%d", &l);
+    printf("Enter h\n");
+    scanf_s("%d", &h);
+    while (l <= h)
+    {
+        c = 1;
+        t = 0;
+        while (c <= h)
+        {
+            if (!(h % c))
+            {
+                t++;
+            }
+            c++;
+            if (t > max)
+                max = t;
+        }
+        h--;
+    }
+    printf("%d\n", max);
+}

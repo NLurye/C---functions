@@ -1,0 +1,21 @@
+	for (i = *startIdx, index=1, lastc--; i<=lastc+(*startIdx); i++, index++)
+	{
+		*avg += ((arr[i] - (*avg)) / (index));
+	}
+______________________________________________
+
+for (i = index; i < max + index; i++)
+	{
+		sum = sum + arr[i];
+	}
+
+	*avg = (double)(sum) / max;
+______________________________________________
+*startIdx = lasti;
+	index = lastc;
+	while (index)
+	{
+		sum += arr[lasti];
+		lasti++, index--;
+	}
+	*avg = (sum / lastc);

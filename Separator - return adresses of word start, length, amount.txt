@@ -1,0 +1,39 @@
+int Separate(char* str, char separator, char** words, int* lengths)
+{
+		int i = 0, count = 0, j=0;
+		while (i < strlen(str))
+		{
+			while (str[i] == separator)
+				i++;
+			for (words[j] = &str[i], count = 0; i < strlen(str); count++, i++)
+			{
+				if (str[i] == separator)
+				{
+					lengths[j++] = count;
+						break;
+				}
+			}
+		}
+		lengths[j++] = count;
+		return j;
+}
+__________________________________________
+int Separate(char* str, char separator, char** words, int* lengths)
+{
+		int i = 0, count = 0, j=0;
+		while (i < strlen(str))
+		{
+			while (*(str+i) == separator)
+				i++;
+			for (*(words+j) = str+i, count = 0; i < strlen(str); count++, i++)
+			{
+				if (*(str+i) == separator)
+				{
+					*(lengths+j++) = count;
+						break;
+				}
+			}
+		}
+		*(lengths + j++) = count;
+		return j;
+}

@@ -1,0 +1,6 @@
+       dig = fin;
+		while (dig != 0)
+		{
+			dig /= 10;
+			count++;
+		}

@@ -1,0 +1,27 @@
+/* Return a reverse string */
+// Q4
+char* ReverseWords(char* words)
+{
+	int i, j = 0, countw, s = strlen(words) + 1;
+	char** w = (char**)malloc((s) * sizeof(char*));
+	int* l = (int*)malloc((s) * sizeof(int));
+	char* t = (char*)calloc(s, sizeof(char));
+	countw = (Separate(words, ' ', w, l) - 1);
+	if (!w || !l || !t)
+	{
+		printf("Allocation error");
+		exit(1);
+	}
+	while (countw + 1)
+	{
+		for (i = 0; i < *(l + countw); i++)
+		{
+			*(t + j++) = *(*(w+countw)+i);
+		}
+		countw--;
+		*(t + j++) = ' ';
+	}
+	*(t + --j) = '\0';
+	free(w), free(l);
+	return t;
+}

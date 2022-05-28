@@ -1,0 +1,39 @@
+void SortByAB(char matStr[][COLS], int rows, int cols)
+{
+	int i, swapped = 1;
+	char tstr[COLS];
+	while (swapped)
+	{
+		for (i = 0, swapped = 0; (i < rows);i++)
+		{
+			if (strcmp(matStr[i], matStr[i + 1]) == 1)
+			{
+				strcpy(tstr, matStr[i]);
+				strcpy(matStr[i], matStr[i + 1]);
+				strcpy(matStr[i + 1], tstr);
+				swapped = 1;
+			}
+		}
+	}
+}
+
+/* Bubble sort for strings by length */
+// Q1-B
+void SortByLenght(char matStr[][COLS], int rows, int cols)
+{
+	int i, swapped = 1;
+	char tstr[COLS];
+	while (swapped)
+	{
+		for (i = 0, swapped = 0; (i < rows); i++)
+		{
+			if (strlen(matStr[i])>strlen(matStr[i + 1]))
+			{
+				strcpy(tstr, matStr[i]);
+				strcpy(matStr[i], matStr[i + 1]);
+				strcpy(matStr[i + 1], tstr);
+				swapped = 1;
+			}
+		}
+	}
+}

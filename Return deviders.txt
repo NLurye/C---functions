@@ -1,0 +1,11 @@
+#include <stdio.h>
+void main()
+{
+    int x, t, i, z=0;
+    scanf_s("%d", &x);
+    for (i = 1; i <= x; i++)
+    {
+        if (!(x % i))
+            printf("%d\t", i);
+    }
+}

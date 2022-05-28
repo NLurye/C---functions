@@ -1,0 +1,26 @@
+#include "exam.h"
+void RowSort(int mat[N][N], int k, int row)
+{
+	// mat: |1||2||3||4||5|678910111213 k=5
+	int j, temp[N];
+	for (j = 0; j < N - k; j++)
+	{
+		temp[j] = mat[row][j+k]; //copy the part after k numbers to the start of temp: 678910111213|_||_||_||_||_|
+		if (j < k)
+		{
+			temp[j + N - k] = mat[row][j]; //copy k numbers from the beginning to the end: 678910111213|1||2||3||4||5|
+		}
+	}
+	for (j=0; j<N; j++)
+	{
+		mat[row][j] = temp[j];
+	}
+}
+void ShiftMatrixByK(int mat[N][N], int k)
+{
+	int i;
+	for (i = 0; i < N; i++)
+	{
+		RowSort(mat, k, i);
+	}
+}
